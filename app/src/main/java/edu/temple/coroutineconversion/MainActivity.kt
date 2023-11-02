@@ -41,7 +41,10 @@ class MainActivity : AppCompatActivity() {
 
         val scope = CoroutineScope(Job() + Dispatchers.Default)
 
-        scope.launch{countdownTimer()}
+        findViewById<Button>(R.id.revealButton).setOnClickListener{
+            scope.launch{countdownTimer()}
+        }
+
     }
 
     suspend fun countdownTimer(){
